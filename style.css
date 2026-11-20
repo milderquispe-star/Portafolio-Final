@@ -1,0 +1,573 @@
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --bg-nav: rgba(255, 255, 255, 0.88);
+  --text-dark: #18181b;            
+  --text-muted: #52525b;         
+  --accent-orange: #f97316;       
+}
+
+
+.site-nav {
+  background-color: var(--bg-nav);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(220, 219, 219, 0.762);
+  padding: 0.85rem 0;
+}
+
+/* 3. TU MARCA / LOGO (MG° | Milder.) */
+.logo {
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: var(--text-dark);
+  letter-spacing: -0.5px;
+}
+
+.logo:hover {
+  color: var(--text-dark); /* Evita que Bootstrap lo pinte de otro color al pasar el mouse */
+}
+
+.logo span {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.logo .orange {
+  color: var(--accent-orange);
+  font-weight: 900;
+}
+
+/* 4. ENLACES DEL MENÚ */
+.site-nav .nav-link {
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.25s ease;
+}
+
+.site-nav .nav-link:hover {
+  color: var(--accent-orange);
+}
+
+/* 5. BOTÓN DE LLAMADO A LA ACCIÓN ("Hablemos") */
+.site-nav .nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--text-dark);
+  color: #ffffff;
+  padding: 0.55rem 1.25rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.nav-cta .material-symbols-outlined {
+  font-size: 1.15rem;
+}
+
+.site-nav .nav-cta:hover {
+  background-color: var(--accent-orange);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+
+/* SECCIÓN HERO CON FONDO ESTÁTICO */
+.hero-parallax {
+  /* 1. Altura: 55vh equivale al 55% del alto visible de tu pantalla */
+  height: 55vh;
+  min-height: 380px; /* Evita que se aplaste demasiado en pantallas muy bajitas */
+
+  /* 2. Imagen de fondo + capa oscura (linear-gradient) para que se lea el texto blanco */
+  background-image: 
+    linear-gradient(rgba(24, 24, 27, 0.72), rgba(24, 24, 27, 0.72)),
+    url('Imagenes/photo-1555066931-4365d14bab8c.avif');
+
+  /* 3. Ajuste y comportamiento estático */
+  background-size: cover;       /* Cubre todo el espacio sin deformar la foto */
+  background-position: center;  /* Centra la imagen */
+  background-attachment: fixed; /* <-- ESTA LÍNEA ES LA QUE LA DEJA ESTÁTICA */
+  color: #ffffff;
+}
+
+.hero-badge {
+  display: inline-block;
+  background-color: rgba(249, 115, 22, 0.2);
+  color: var(--accent-orange);
+  border: 1px solid var(--accent-orange);
+  padding: 0.25rem 0.85rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.hero-title {
+  font-size: clamp(2.2rem, 5vw, 3.5rem); /* Tamaño adaptable según el ancho de pantalla */
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.hero-subtitle {
+  max-width: 600px;
+  color: #e4e4e7;
+  font-size: 1.1rem;
+}
+
+.btn-hero {
+  display: inline-block;
+  background-color: var(--accent-orange);
+  color: #ffffff;
+  padding: 0.75rem 1.6rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-hero:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+  opacity: 0.92;
+}
+
+/* SECCIÓN DE ABAJO (Necesita fondo sólido para tapar la imagen al subir) */
+.seccion-contenido {
+  background-color: #ffffff;
+  padding: 5rem 0;
+  min-height: 90vh; /* Le da altura extra para que puedas probar el scroll */
+}
+
+/* SECCIÓN SOBRE MÍ */
+.section-tag {
+  color: var(--accent-orange);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.about-me {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.5px;
+}
+
+.about-me-text p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+
+.about-card {
+  background-color: #fafafa;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+.about-card-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-card-item .material-symbols-outlined {
+  color: var(--accent-orange);
+  background-color: rgba(249, 115, 22, 0.12);
+  padding: 0.6rem;
+  border-radius: 12px;
+}
+
+.about-card-item h6 {
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.2rem;
+}
+
+.about-card-item p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+
+
+
+/* SECCIÓN PROYECTOS */
+.seccion-proyectos {
+  background-color: #fafafa;
+  padding: 3rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.project-card {
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translatex(-8px);
+  border-color: var(--accent-orange);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+}
+
+.project-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.project-icon {
+  color: var(--accent-orange);
+  background-color: rgba(249, 115, 22, 0.12);
+  padding: 0.7rem;
+  border-radius: 12px;
+  font-size: 1.5rem;
+}
+
+.project-status {
+    font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.3rem 0.75rem;
+  border-radius: 50px;
+  background-color: #f4f4f5;
+  color: var(--text-muted);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+.status-progress {
+  background-color: rgba(249, 115, 22, 0.14);
+  color: var(--accent-orange);
+}
+
+.project-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.75rem;
+}
+
+.project-desc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-tags span {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  padding: 0.2rem 0.75rem;
+  border-radius: 8px;
+  background-color: var(--accent-orange);
+}
+
+
+
+
+
+/* SECCIÓN TESTIMONIOS */
+.testimonios-contenido {
+  background-color: #ffffff;
+  padding: 5.5rem 0;
+}
+
+.testimonial-card {
+  background-color: #fafafa;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-orange);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+}
+
+/* CONTENEDOR DE LA FOTO + ÍCONO DE COMILLAS */
+.avatar-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+/* FOTO CIRCULAR SIN DEFORMARSE */
+.testimonial-avatar {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;      /* Convierte el cuadrado en círculo perfecto */
+  object-fit: cover;       /* Recorta la foto sin aplastar la cara */
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 0 2px var(--accent-orange); /* Aro naranja exterior */
+}
+
+/* CÍRCULO PEQUEÑO DE COMILLAS EN LA ESQUINA DE LA FOTO */
+.quote-badge {
+  position: absolute;
+  bottom: 0;
+  right: -4px;
+  background-color: var(--accent-orange);
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 4px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+}
+
+.author-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  margin-bottom: 0.15rem;
+}
+
+.author-role {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* ESTRELLAS DECORATIVAS */
+.testimonial-stars {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  margin: 1rem 0;
+  color: var(--accent-orange);
+}
+
+.testimonial-stars .material-symbols-outlined {
+  font-size: 1.1rem;
+}
+
+.testimonial-text {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  font-style: italic;
+  margin: 0;
+}
+
+
+
+
+
+/* SECCIÓN GALERÍA */
+.seccion-galeria {
+  background-color: #fafafa;
+  padding: 5.5rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.gallery-card {
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  overflow: hidden; /* Recorta la imagen para respetar las esquinas redondeadas */
+  margin: 0;        /* Quita el margen que <figure> trae por defecto */
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.gallery-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-orange);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+}
+
+.gallery-img-box {
+  width: 100%;
+  aspect-ratio: 16 / 10; /* Obliga a las 3 fotos a tener exactamente la misma altura */
+  overflow: hidden;      /* Evita que la foto se desborde al hacer zoom */
+  background-color: #e4e4e7;
+}
+
+.gallery-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* Llena el recuadro sin aplastar tus capturas */
+  transition: transform 0.4s ease;
+}
+
+.gallery-card:hover .gallery-img-box img {
+  transform: scale(1.06); /* Agranda suavemente la captura dentro de su marco */
+}
+
+.gallery-caption {
+  padding: 1.25rem 1.5rem;
+}
+
+.gallery-caption h6 {
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.2rem;
+}
+
+.gallery-caption span {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+
+
+/* SECCIÓN CONTACTO */
+.section-contacto {
+  background-color: #ffffff;
+  padding: 5.5rem 0;
+}
+
+.contact-form {
+  background-color: #fafafa;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+.contact-form .form-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+
+.custom-input {
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  border-radius: 10px;
+  padding: 0.7rem 0.95rem;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Cambia el borde azul por defecto de Bootstrap por tu naranja al hacer clic */
+.custom-input:focus {
+  border-color: var(--accent-orange);
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.16);
+}
+
+.btn-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  background-color: var(--text-dark);
+  color: #ffffff;
+  border: none;
+  padding: 0.85rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.btn-submit .material-symbols-outlined {
+  font-size: 1.1rem;
+}
+
+.btn-submit:hover {
+  background-color: var(--accent-orange);
+  transform: translateY(-2px);
+}
+
+/* TARJETA DE INFORMACIÓN DE CONTACTO */
+.contact-info {
+  padding: 1rem 0.5rem;
+}
+
+.contact-info-title {
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 0.75rem;
+}
+
+.contact-info-desc {
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-item .material-symbols-outlined {
+  color: var(--accent-orange);
+  background-color: rgba(249, 115, 22, 0.12);
+  padding: 0.65rem;
+  border-radius: 12px;
+}
+
+.contact-item h6 {
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.15rem;
+}
+
+.contact-item p,
+.contact-item a {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  text-decoration: none;
+  margin: 0;
+}
+
+.contact-item a:hover {
+  color: var(--accent-orange);
+}
+
+/* PIE DE PÁGINA (FOOTER) */
+.site-footer {
+  background-color: #fafafa;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 1.75rem 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.back-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-dark);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.back-top .material-symbols-outlined {
+  font-size: 1.1rem;
+}
+
+.back-top:hover {
+  color: var(--accent-orange);
+}
